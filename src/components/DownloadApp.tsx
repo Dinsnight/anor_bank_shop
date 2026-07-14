@@ -45,7 +45,7 @@ export default function DownloadApp() {
 
         <Box pos="relative" w={350} h={420}>
           <Image
-            src="./public/phone.png"
+            src="/phone.png"
             w={270}
             style={{
               position: 'absolute',
@@ -55,7 +55,7 @@ export default function DownloadApp() {
           />
 
           <Image
-            src="./public/phone.png"
+            src="/phone.png"
             w={270}
             style={{
               position: 'absolute',
