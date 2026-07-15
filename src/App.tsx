@@ -3,6 +3,7 @@ import '@mantine/dates/styles.css'
 import '@mantine/notifications/styles.css'
 
 import { createTheme, MantineProvider } from '@mantine/core'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from 'react-router'
 import { router } from './router/router.tsx'
@@ -19,6 +20,7 @@ function App() {
       <MantineProvider theme={theme}>
         <RouterProvider router={router} />
       </MantineProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }
