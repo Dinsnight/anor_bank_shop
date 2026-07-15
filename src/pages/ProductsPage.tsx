@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Center, Container, Group, Loader, Pagination, SimpleGrid, Stack, Text, Title } from '@mantine/core'
+import { Alert, Box, Center, Container, Loader, Pagination, SimpleGrid, Stack, Text, Title } from '@mantine/core'
 import Brands from '../components/Brands'
 import type { IProductParams } from '../types/product'
 import { useSearchRequestParams } from '../hooks/useSearchRequestParams'
@@ -9,14 +9,6 @@ import { ProductCard } from '../components/ProductCard'
 
 const PAGE_SIZE = 6
 
-const categories = [
-  'All products',
-  'Clothes',
-  'Electronics',
-  'Furniture',
-  'Shoes',
-  'Miscellaneous',
-]
 
 export function ProductsPage() {
   const { getDefaultSearchParams, setSearchParams } =
