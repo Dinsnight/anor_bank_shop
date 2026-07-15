@@ -20,7 +20,7 @@ export const useProducts = (params?: IProductParams) => {
 
       if (filters.search) {
         filtered = filtered.filter((product)=>
-        product.title.toLowerCase().includes(filters.search.toLowerCase()))
+        product.title.toLowerCase().includes(filters.search!.toLowerCase()))
       }
 
       if (filters.categoryId) {
