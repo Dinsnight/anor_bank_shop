@@ -23,4 +23,6 @@ export interface ICommonParams {
 
 export type IProductParams = ICommonParams & {
   categoryId?: string
+  price_min?: string
+  price_max?: string 
 }

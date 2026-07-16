@@ -29,6 +29,18 @@ export const useProducts = (params?: IProductParams) => {
         )
       }
 
+      if (filters.price_min) {
+        filtered = filtered.filter(
+          (product)=> product.price >= Number(filters.price_min))
+      }
+
+       if (filters.price_max) {
+        filtered = filtered.filter(
+          (product)=> product.price <= Number(filters.price_max))
+      }
+
+
+
       return{
         data: filtered.slice(start, start + limit),
       total: filtered.length,
