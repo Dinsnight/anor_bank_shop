@@ -51,7 +51,7 @@ export const ProductFilter = () => {
       <TextInput
         w={260}
         radius="xl"
-        placeholder="Поиск по названию"
+        placeholder="Please tell me name of your product"
         leftSection={<RiSearchLine size={16} />}
         value={searchValue}
         onChange={(event) => setSearchValue(event.currentTarget.value)}
