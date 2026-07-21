@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { categoriesApi, productsApi } from '../api/products'
 import type { IProductParams } from '../types/product'
 
-export const PRODUCT_KEY = 'products-key'
+export const PRODUCTS_KEY = 'products-key'
 export const CATEGORIES_KEY = 'categories-key'
 
 export const useProducts = (params?: IProductParams) => {
@@ -13,7 +13,7 @@ export const useProducts = (params?: IProductParams) => {
   const start = (current - 1) * limit
 
   return useQuery({
-    queryKey: [PRODUCT_KEY, filters, current, limit],
+    queryKey: [PRODUCTS_KEY, filters, current, limit],
     queryFn: () => productsApi.get().then((resp) => resp.data),
     select: (all) => {
       let filtered = all
@@ -52,7 +52,7 @@ export const useProducts = (params?: IProductParams) => {
 
 export const useProductById = (id?: string) =>
   useQuery({
-    queryKey: [PRODUCT_KEY, id],
+    queryKey: [PRODUCTS_KEY, id],
     queryFn: () => productsApi.getById(Number(id)).then((resp) => resp.data),
   })
 

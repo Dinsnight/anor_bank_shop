@@ -26,3 +26,11 @@ export type IProductParams = ICommonParams & {
   price_min?: string
   price_max?: string 
 }
+
+export interface IProductForm {
+  title: string
+  price: number
+  description: string
+  categoryId: number
+  images: string[]
+}

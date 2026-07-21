@@ -5,6 +5,7 @@ import { useSearchRequestParams } from '../hooks/useSearchRequestParams'
 import { useProducts } from '../hooks/useProducts'
 import { ProductFilter } from '../components/products/ProductFilter'
 import { ProductCard } from '../components/ProductCard'
+import { CreateProductButton } from '../components/products/CreateProductButton'
 
 
 const PAGE_SIZE = 6
@@ -29,6 +30,7 @@ export function ProductsPage() {
         
  <Box px={72} py={60}>
         <Stack gap={40} align="center">
+          <CreateProductButton/>
           <Title order={2}>Category</Title>
 
           <ProductFilter />

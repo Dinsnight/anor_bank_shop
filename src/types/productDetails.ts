@@ -1,4 +1,5 @@
 export interface ProductDetailsProp {
+  id: number
   name: string
   price: number
   image: string

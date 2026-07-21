@@ -1,4 +1,4 @@
-import type{ IProduct, ICategory, IProductParams } from '../types/product'
+import type{ IProduct, ICategory, IProductParams, IProductForm } from '../types/product'
 import { $api } from './api'
 
 const baseURL = '/products'
@@ -6,10 +6,10 @@ const baseURL = '/products'
 export const productsApi = {
   get: (params?: IProductParams) => $api.get<IProduct[]>(baseURL, { params }),
   getById: (id: IProduct['id']) => $api.get<IProduct>(`${baseURL}/${id}`),
-  create: (data: Partial<IProduct>) => $api.post<IProduct>(baseURL, data),
-  update: (id: IProduct['id'], data: Partial<IProduct>) =>
+  create: (data: IProductForm) => $api.post<IProduct>(baseURL, data),
+   update: (id: IProduct['id'], data: Partial<IProductForm>) =>
     $api.put<IProduct>(`${baseURL}/${id}`, data),
-  delete: (id: IProduct['id']) => $api.delete(`${baseURL}/${id}`),
+  delete: (id: IProduct['id']) => $api.delete<boolean>(`${baseURL}/${id}`),
 }
 
 export const categoriesApi = {
